@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<body class="bg-dark">
+<!--BARRA DE NAVEGACION-->
+    <nav class="navbar navbar-expand-lg  bg-dark fixed-top  " >
+        <div class="container-fluid " >
+          <img src="img/logo" height="65px" class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-link text-light"data-bs-toggle="modal" data-bs-target="#modalNoticia">AGREGAR NOTICIA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light"data-bs-toggle="modal" data-bs-target="#modalCantante">AGREGAR ARTISTA</a>
+              </li>
+
+            </ul>
+            <div id= "inicio-sesion" class="d-flex">
+              <div class="">
+                <a class="btn btn-light m-1" href="index.html" role="link"
+                ><i class="bi bi-door-closed"> Cerrar Sesion</i
+              ></a></div>
+
+          </div>
+        </div>
+      </nav>
+<!--FINAL BARRA DE NAVEGACION-->
+<!--CARRUSEL-->
+
+<div class="p-3">
+  <br>
+</div>
+<main id="main" class="img-fluid" style="background-image:url(img/losprisioneros.jpg)">
+  <section class="py-5 text-center container text-light img-fluid">
+    <div class="row py-lg-5  text-light">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <img src="img/logo">
+        <p class="lead">Bienvenido Administrador </p>
+      </div>
+    </div>
+  </section>
+</main>|
+<!--EVENTOS-->
+<container class="p-3">
+<div class="text-center text-light p-2">
+    <h2>¿QUE DESEAS HACER?</h2>
+</div>
+<div class="">
+<div class="row justify-content-evenly ">
+  <div class="col-4">
+    <div class="">
+      <a class="btn btn-light m-1"  data-bs-toggle="modal" data-bs-target="#modalCantante" role="link"
+      ><img src="img/agregarartista.png" > <i class="bi bi-person-circle text-dark">  AGREGAR CANTANTE </i></a></div>
+  </div>
+  <div class="col-4">
+    <div class="">
+      <a class="btn btn-light m-1"  data-bs-toggle="modal" data-bs-target="#modalNoticia"  role="link"
+      ><img src="img/agregarnoticia.png" > <i class="bi bi-person-circle text-dark">  AGREGAR NOTICIA </i></a></div>
+  </div>
+    </div>
+  </div>
+</container>
+
+<!--MODAL GENERAL-->
+<!--MODAL BETO CUEVAS-->
+
+<!--MODAL BETO CUEVAS-->
+<!--MODAL LA COMBO TORTUGA-->
+<div class="modal fade" id="modalCantante" tabindex="-1" role="dialog" aria-labelledby="modalLoginLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-dark">
+        <img src="img/logo" height="50px">Iniciar Sesion<hr>
+        <h5 class="modal-title text-light" id="modalLoginLabel" >INGRESAR CANTANTE</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+                            <div class="form-group"> 
+                              <div class="form-group col-md-6">
+                                <label for="inputPrimerNombre">Nombre </label>
+                                <input type="text" class="form-control" id="inputPrimerNombre" placeholder="Ingresa Nombre de Cantante ">
+                                <input type="text" class="form-control" id="inputId_cliente" hidden>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="inputDireccion">Descripcion</label>
+                              <input type="text" class="form-control" id="inputDireccion" placeholder="Breve Descripcion del Cantante">
+                            </div>
+                            <div class="form-group">
+                              <label for="inputCorreo">Imagen</label>
+                              <input type="file" class="form-control" id="inputCorreo" placeholder="Correo">
+                            </div>
+                            <div class="p-3 text-center">
+                          <a id="btnAgregarCliente" class="btn btn-dark">Registrar</a>
+                          <a id="btnEditarCliente" class="btn btn-dark">Editar</a>
+                          <a id="btnCancelarEdicion" class="btn btn-dark">Cancelar</a></div>
+                        </div>
+                    <div class="col-sm-12">
+                      <div class="card" style="height: 100%;">
+                        <div class="card-body">
+            
+                          <h5 class="card-title">Listado de Cantantes</h5>
+                          <div class="table-responsive">
+                            <table class="table" id="tablaCliente">
+                              <thead class="text-light bg-dark" >
+                                <tr>
+                                  <th scope="col">id</th>
+                                  <th scope="col">Nombre </th>
+                                  <th scope="col">Biografia</th>
+                                  <th scope="col">Imagen</th>
+                                  <th scope="col">Estado</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row" >1</th>
+                                  <td>Beto Cuevas</td>
+                                  <td>Ex integrante de La Ley</td>
+                                  <td>img/betocuevas</td>
+                                  <td>
+                                    <div class="btn-group btn-group-sm " role="group" aria-label="Basic example">
+                                      <button type="button" class="btn btn-success btnEditarcliente"><i class="fa-solid fa-pencil"></i></button>
+                                      <button type="button" class="btn btn-danger btnEliminarCliente"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>Leo Rey</td>
+                                  <td>Integrante de La Noche</td>
+                                  <td>img/leorey</td>
+                                  <td>
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                      <button type="button" class="btn btn-success btnEditarcliente"><i class="fa-solid fa-pencil"></i></button>
+                                      <button type="button" class="btn btn-danger btnEliminarCliente"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                  <td>Jorge Gonzales</td>
+                                  <td>Cantautor Chileno</td>
+                                  <td>img/jorgegonzales</td>
+                                  <td>
+                                    <div class="btn-group btn-group-sm " role="group" aria-label="Basic example">
+                                      <button type="button" class="btn btn-success  btnEditarCliente"><i class="fa-solid fa-pencil"></i></button>
+                                      <button type="button" class="btn btn-danger btnEliminarCliente"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div></div>
+  </div>
+</div>
+
+<!--MODAL 2-->
+<div class="modal fade" id="modalNoticia" tabindex="-1" role="dialog" aria-labelledby="modalLoginLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-dark">
+        <img src="img/logo" height="50px">Iniciar Sesion<hr>
+        <h5 class="modal-title text-light" id="modalLoginLabel" >INGRESAR NOTICIA</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+                            <div class="form-group"> 
+                              <div class="form-group col-md-6">
+                                <label for="inputPrimerNombre">Titulo </label>
+                                <input type="text" class="form-control" id="inputPrimerNombre" placeholder="Ingresa Titulo de Noticia ">
+                                <input type="text" class="form-control" id="inputId_cliente" hidden>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="inputDireccion">Noticia</label>
+                              <input type="text" class="form-control" id="inputDireccion" placeholder="Ingresa la Noticia">
+                            </div>
+                            <div class="form-group">
+                              <label for="inputCorreo">Imagen</label>
+                              <input type="file" class="form-control" id="inputCorreo" placeholder="Correo">
+                            </div>
+                            <div class="p-3 text-center">
+                          <a id="btnAgregarCliente" class="btn btn-dark">Registrar</a>
+                          <a id="btnEditarCliente" class="btn btn-dark">Editar</a>
+                          <a id="btnCancelarEdicion" class="btn btn-dark">Cancelar</a></div>
+                        </div>
+                    <div class="col-sm-12">
+                      <div class="card" style="height: 100%;">
+                        <div class="card-body">
+            
+                          <h5 class="card-title">Listado de Noticias</h5>
+                          <div class="table-responsive">
+                            <table class="table" id="tablaCliente">
+                              <thead class="text-light bg-dark" >
+                                <tr>
+                                  <th scope="col">id</th>
+                                  <th scope="col">Titulo </th>
+                                  <th scope="col">Noticia</th>
+                                  <th scope="col">Imagen</th>
+                                  <th scope="col">Estado</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row" >1</th>
+                                  <td>Separacion Moral Distraida</td>
+                                  <td>La banda la Moral Dist...</td>
+                                  <td>img/moraldistraida.jpg</td>
+                                  <td>
+                                    <div class="btn-group btn-group-sm " role="group" aria-label="Basic example">
+                                      <button type="button" class="btn btn-success btnEditarcliente"><i class="fa-solid fa-pencil"></i></button>
+                                      <button type="button" class="btn btn-danger btnEliminarCliente"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>Teorema gana en FMS</td>
+                                  <td>El Cañetino Teore...</td>
+                                  <td>img/teorema.png</td>
+                                  <td>
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                      <button type="button" class="btn btn-success btnEditarcliente"><i class="fa-solid fa-pencil"></i></button>
+                                      <button type="button" class="btn btn-danger btnEliminarCliente"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                  <td>Cami sera Jurada en The Voice</td>
+                                  <td>Se hizo publica la Notic...</td>
+                                  <td>img/cami-tv.jpg</td>
+                                  <td>
+                                    <div class="btn-group btn-group-sm " role="group" aria-label="Basic example">
+                                      <button type="button" class="btn btn-success  btnEditarCliente"><i class="fa-solid fa-pencil"></i></button>
+                                      <button type="button" class="btn btn-danger btnEliminarCliente"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+            
+          
+            <!--MODAL-->
+            <!-- Footer -->
+            <!-- FOOTER -->
+            
+            <!--JAVASCRIPT-->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+            <!--JAVASCRIPT-->
+            </body>
+            <!--USO-->
+            </html>
+
+ 
